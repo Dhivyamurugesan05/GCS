@@ -1,0 +1,130 @@
+/* ===============================
+   SERVICE SECTION
+=================================*/
+
+.service-section {
+  padding: 100px 10%;
+  background: linear-gradient(to bottom, #f4f7fb, #e9eef5);
+}
+
+/* ===============================
+   TITLE
+=================================*/
+
+.service-title {
+  text-align: center;
+  font-size: 42px;
+  margin-bottom: 80px;
+  color: #0a2a43;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* ===============================
+   ROW LAYOUT
+=================================*/
+
+.service-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 70px;
+  margin-bottom: 100px;
+  transition: all 0.4s ease;
+}
+
+.service-row.reverse {
+  flex-direction: row-reverse;
+}
+
+/* ===============================
+   IMAGE SECTION
+=================================*/
+
+.service-image {
+  flex: 1;
+  text-align: center;
+}
+
+.service-image img {
+  width: 100%;
+  max-width: 450px;
+  border-radius: 16px;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.service-image img:hover {
+  transform: scale(1.06);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
+}
+
+/* ===============================
+   CONTENT SECTION
+=================================*/
+
+.service-content {
+  flex: 1;
+}
+
+.service-content h3 {
+  font-size: 28px;
+  margin-bottom: 14px;
+  color: #083358;
+  font-weight: 600;
+}
+
+.service-content h4 {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: #0a4d68;
+  font-weight: 500;
+}
+
+.service-content p {
+  font-size: 17px;
+  line-height: 1.9;
+  color: #444;
+  max-width: 600px;
+}
+
+/* ===============================
+   RESPONSIVE DESIGN
+=================================*/
+
+@media (max-width: 992px) {
+  .service-row {
+    gap: 40px;
+  }
+
+  .service-title {
+    font-size: 34px;
+  }
+
+  .service-content h3 {
+    font-size: 24px;
+  }
+
+  .service-content h4 {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .service-row {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .service-row.reverse {
+    flex-direction: column;
+  }
+
+  .service-content p {
+    margin: 0 auto;
+  }
+
+  .service-image img {
+    max-width: 350px;
+  }
+}
