@@ -1,0 +1,103 @@
+/* FULL PAGE BACKGROUND */
+.signup-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e,black);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Optional glowing background effect */
+.signup-container::before {
+  content: "";
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(255,255,255,0.2), transparent 70%);
+  top: -100px;
+  right: -100px;
+  filter: blur(80px);
+}
+
+/* GLASS CARD */
+.signup-card {
+  backdrop-filter: blur(20px);
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 40px;
+  padding: 70px 50px;
+  width: 500px;
+  text-align: center;
+  border: 2px solid rgba(11, 4, 4, 0.3);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+  color: white;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+/* TITLE */
+.signup-card h2 {
+  margin-bottom: 25px;
+  font-size: 30px;
+  font-weight: 700;
+  background: linear-gradient(90deg, #ffffff, #cfcfcf);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* INPUT FIELDS */
+.signup-card input {
+  width: 100%;
+  padding: 18px;
+  margin: 14px 0;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.4);
+  background: rgba(255,255,255,0.15);
+  color: white;
+  font-size: 20px;
+  outline: none;
+  transition: 0.3s ease;
+}
+
+/* Placeholder color */
+.signup-card input::placeholder {
+  color: rgba(255,255,255,0.7);
+}
+
+/* Focus effect */
+.signup-card input:focus {
+  border: 1px solid #fff;
+  box-shadow: 0 0 10px rgba(255,255,255,0.5);
+}
+
+/* BUTTON */
+.signup-card button {
+  width: 50%;
+  padding: 20px;
+  margin-top: 20px;
+  background: linear-gradient(135deg, #040b2a, #764ba2,rgb(7, 7, 36));
+  color: white !important;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 18px;
+  transition: 0.3s ease;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.signup-card button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.4);
+}
+
+/* Smooth Fade Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
