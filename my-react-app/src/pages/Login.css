@@ -1,0 +1,254 @@
+
+/* ================= LIGHT MIXED BACKGROUND ================= */
+.main-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Poppins";
+  overflow: hidden;
+
+  background: linear-gradient(
+    -45deg,
+    #5727c0,
+    #01070b,
+    #0d0da2,
+    #3408b9,
+    #ede7f6
+  );
+  background-size: 400% 400%;
+  animation: gradientMove 18s ease infinite;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Soft floating pastel glow */
+.main-container::before,
+.main-container::after {
+  content: "";
+  position: absolute;
+  width: 600px;
+  height: 500px;
+  border-radius: 50%;
+  filter: blur(140px);
+  opacity: 0.4;
+  z-index: 0;
+}
+
+.main-container::before {
+  background: #bbdefb;
+  top: -120px;
+  left: -100px;
+}
+
+.main-container::after {
+  background: #f8bbd0;
+  bottom: -120px;
+  right: -100px;
+}
+
+/* ================= DARK PREMIUM GLASS CARD ================= */
+.card {
+  width: 600px;
+  padding: 20px 60px;
+  border-radius: 30px;
+  position: relative;
+  z-index: 1;
+
+  background: linear-gradient(
+    135deg,
+    rgba(25, 25, 35, 0.95),
+    rgba(35, 35, 55, 0.95)
+  );
+
+  backdrop-filter: blur(25px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+
+  animation: cardFloat 6s ease-in-out infinite;
+}
+
+/* Animated elegant border */
+.card::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: 30px;
+  background: linear-gradient(
+    45deg,
+    #0e0113,
+    #2819d2,
+    #2d0096,
+    #060008
+  );
+  background-size: 300% 300%;
+  animation: borderMove 12s linear infinite;
+  z-index: -1;
+  filter: blur(10px);
+  opacity: 0.6;
+}
+
+@keyframes borderMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes cardFloat {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+/* ================= CONTENT CENTER ================= */
+.left-side {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+
+/* Back Button */
+.back-btn {
+  background: none;
+  border: none;
+  color: #90caf9;
+  font-size: 20px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: 0.3s;
+}
+
+.back-btn:hover {
+  color: #f48fb1;
+  transform: translateX(-5px);
+}
+
+/* Title */
+h1 {
+  font-size: 45px;
+  font-style: italic;
+  margin-bottom: 10px;
+  background: linear-gradient(90deg, #90caf9, #ce93d8);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+  margin-bottom: 30px;
+  font-size: 25px;
+  font-style: oblique;
+  color: #bbb;
+  max-width: 400px;
+}
+
+/* ================= INPUTS ================= */
+.input-group {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.input-group input {
+  width: 90%;
+  padding: 20px 20px;
+  border-radius: 30px;
+  border: none;
+  outline: none;
+  background: rgba(255, 255, 255, 0.08);
+  color: white;
+  transition: 0.3s;
+}
+
+.input-group input::placeholder {
+  color: #aaa;
+}
+
+.input-group input:focus {
+  width: 100%;
+  box-shadow: 0 0 12px rgba(144, 202, 249, 0.6);
+}
+
+/* ================= OPTIONS ================= */
+.options {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+
+.forgot {
+  cursor: pointer;
+  color: #90caf9;
+  font-size: 25px;
+  transition: 0.3s;
+}
+
+.forgot:hover {
+  color: #ce93d8;
+}
+
+/* ================= BUTTONS ================= */
+.button-row {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.signin-btn,
+.signup-btn {
+  padding: 12px 35px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  font-weight: 800;
+  background: linear-gradient(90deg, #7b1fa2, #1976d2);
+  color: white;
+  transition: 0.3s;
+}
+
+.signin-btn:hover,
+.signup-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 18px rgba(123, 31, 162, 0.6);
+}
+
+/* ================= SOCIAL ================= */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.circle {
+  width: 45px;
+  height: 45px;
+  border-radius: 60%;
+  background: rgba(255,255,255,0.05);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.3s;
+  border: 1px solid rgba(255,255,255,0.15);
+  color: #ccc;
+}
+
+.circle:hover {
+  transform: scale(1.15);
+  background: linear-gradient(90deg, #7b1fa2, #1976d2);
+  color: white;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 700px) {
+  .card {
+    width: 90%;
+    padding: 38px;
+  }
+}
